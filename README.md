@@ -1,5 +1,5 @@
 # TrivyWeb
-A Simple and Comprehensive Vulnerability Scanner for Containers, Suitable for CI for Web
+A Simple and Comprehensive Vulnerability Scanner for Containers, Suitable for CI for Web. TrivyWeb use python django framework. 
 
 # TOC
 
