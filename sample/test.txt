@@ -1,0 +1,14 @@
+================
+
+https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_json.html
+https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.io.json.json_normalize.html
+
+==================
+
+with open('/Users/korayagaya/PycharmProjects/TrivyWeb/sample/docker-ubuntu.json') as json_file:
+        dict_lst = json.load(json_file)
+    comment = json_normalize(dict_lst, 'Vulnerabilities', record_prefix='Prefix.')
+    print(comment.to_html(classes="table table-striped"))
+
+OUTPUT
+======
