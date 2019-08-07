@@ -29,5 +29,14 @@ with open('/Users/XXXXX/PycharmProjects/TrivyWeb/sample/docker-ubuntu.json') as 
     comment = json_normalize(dict_lst, 'Vulnerabilities', record_prefix='Prefix.')
     print(comment.to_csv (r'/Users/korayagaya/PycharmProjects/TrivyWeb/sample/docker-ubuntu.csv', index = None, header=True))
 
-sqlitebiter -o ../db.sqlite3 file docker-ubuntu.csv
+sqlitebiter --add-primary-key id -o ../db.sqlite3 file VulnPages.csv
+
+
+QUERY
+======
+Link = https://tutorial.djangogirls.org/tr/django_orm/
+
+from pages.models import VulnPages
+VulnPages.objects.all()
+VulnPages.objects.filter(PkgName__contains='libc')
 
