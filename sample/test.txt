@@ -2,13 +2,32 @@
 
 https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_json.html
 https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.io.json.json_normalize.html
+https://datatofish.com/export-dataframe-to-csv/
+https://sqlitebiter.readthedocs.io/en/latest/pages/usage/file/ls
 
+HTML OUTPUT
 ==================
+import json
+import pandas as pd
+from pandas.io.json import json_normalize
 
-with open('/Users/korayagaya/PycharmProjects/TrivyWeb/sample/docker-ubuntu.json') as json_file:
-        dict_lst = json.load(json_file)
+with open('/Users/XXXX/PycharmProjects/TrivyWeb/sample/docker-ubuntu.json') as json_file:
+    dict_lst = json.load(json_file)
     comment = json_normalize(dict_lst, 'Vulnerabilities', record_prefix='Prefix.')
     print(comment.to_html(classes="table table-striped"))
 
-OUTPUT
+CSV OUTPUT
 ======
+
+import json
+import pandas as pd
+from pandas.io.json import json_normalize
+
+
+with open('/Users/XXXXX/PycharmProjects/TrivyWeb/sample/docker-ubuntu.json') as json_file:
+    dict_lst = json.load(json_file)
+    comment = json_normalize(dict_lst, 'Vulnerabilities', record_prefix='Prefix.')
+    print(comment.to_csv (r'/Users/korayagaya/PycharmProjects/TrivyWeb/sample/docker-ubuntu.csv', index = None, header=True))
+
+sqlitebiter -o ../db.sqlite3 file docker-ubuntu.csv
+
