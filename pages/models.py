@@ -2,14 +2,16 @@ from django.db import models
 
 
 # python manage.py makemigrations pages
+# python manage.py sqlmigrate pages 0001
+# python manage.py migrate
 # https://belgeler.yazbel.com/python-istihza/Ucuncu_taraf_moduller/django_mod%C3%BCl%C3%BC/django_2.html
 
 class Project(models.Model):
-    VulnerabilityID = models.CharField(max_length=10000)
-    PkgName = models.CharField(max_length=10000)
-    InstalledVersion = models.CharField(max_length=10000)
-    FixedVersion = models.CharField(max_length=10000)
-    Title = models.CharField(max_length=10000)
-    Description = models.CharField(max_length=10000)
-    Severity = models.CharField(max_length=10000)
-    References = models.CharField(max_length=10000)
+    VulnerabilityID = models.TextField()
+    PkgName = models.TextField()
+    InstalledVersion = models.TextField()
+    FixedVersion = models.TextField()
+    Title = models.TextField()
+    Description = models.TextField()
+    Severity = models.TextField()
+    References = models.TextField()
