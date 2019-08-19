@@ -35,8 +35,12 @@ sqlitebiter --add-primary-key id -o ../db.sqlite3 file VulnPages.csv
 QUERY
 ======
 Link = https://tutorial.djangogirls.org/tr/django_orm/
+https://www.codementor.io/overiq/basics-of-django-orm-cwamhcerp
 
 from pages.models import VulnPages
 VulnPages.objects.all()
 VulnPages.objects.filter(PkgName__contains='libc')
+VulnPages.objects.values_list("id", "PkgName")
+VulnPages.objects.values_list("VulnerabilityID", "PkgName")
+VulnPages.objects.values_list("VulnerabilityID", "PkgName", "InstalledVersion", "FixedVersion", "Title", "Description", "Severity", "References")
 
